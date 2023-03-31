@@ -1,14 +1,19 @@
 {
   "name": "vti-with-exclude",
   "description": "Vetur Terminal Interface",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./dist/cli.js",
-  "bin": "./bin/vti",
+  "bin": {
+    "vti": "./bin/vti"
+  },
   "author": "uwjiaoxing <uwjiaoxing@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "commander": "^8.3.0",
     "vls": "^0.8.2"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "compile": "rollup -c rollup.config.js && yarn hack:cli",
