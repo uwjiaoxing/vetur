@@ -119,12 +119,24 @@ function range2Location(range: Range): SourceLocation {
   };
 }
 
+// NOTE: 取 vetur 配置
+let veturConfig = {} as { exclude?: string[] };
+const veturConfigFiles = glob.sync('vetur.config.js', {
+  cwd: process.cwd()
+});
+if (veturConfigFiles.length) {
+  veturConfig = require(path.resolve(process.cwd(), veturConfigFiles[0]));
+}
+
 async function getDiagnostics(workspaceUri: URI, paths: string[], severity: DiagnosticSeverity) {
   const clientConnection = await prepareClientConnection(workspaceUri);
 
   let files: string[];
   if (paths.length === 0) {
-    files = glob.sync('**/*.vue', { cwd: workspaceUri.fsPath, ignore: ['node_modules/**'] });
+    files = glob.sync('**/*.vue', {
+      cwd: workspaceUri.fsPath,
+      ignore: ['node_modules/**'].concat(veturConfig.exclude ?? [])
+    });
   } else {
     // Could use `flatMap` once available:
     const listOfPaths = paths.map(inputPath => {
@@ -135,7 +147,10 @@ async function getDiagnostics(workspaceUri: URI, paths: string[], severity: Diag
       }
 
       const directory = URI.file(absPath);
-      const directoryFiles = glob.sync('**/*.vue', { cwd: directory.fsPath, ignore: ['node_modules/**'] });
+      const directoryFiles = glob.sync('**/*.vue', {
+        cwd: directory.fsPath,
+        ignore: ['node_modules/**'].concat(veturConfig.exclude ?? [])
+      });
       return directoryFiles.map(f => path.join(inputPath, f));
     });
 
