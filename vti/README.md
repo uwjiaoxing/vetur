@@ -38,3 +38,5 @@ module.exports = {
   exclude: ['src/test/**']
 };
 ```
+
+> 此项目在 [vetur@0.36.1](https://github.com/vuejs/vetur/tree/v0.36.1) 的基础上修改而来，并加入了 exclude 的功能。
