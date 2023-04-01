@@ -2,12 +2,15 @@
   <h1 align="center">Vetur</h1>
 </p>
 
+> 在 [vetur@0.36.1](https://github.com/vuejs/vetur/tree/v0.36.1) 的基础上给 vti 添加了 exclude 的功能。
+
 ## Project status
+
 issue: https://github.com/vuejs/vetur/issues/3476
 
-New official vue editor support: Volar   
-VSCode extension: https://marketplace.visualstudio.com/items?itemName=Vue.volar   
-Project: https://github.com/johnsoncodehk/volar   
+New official vue editor support: Volar  
+VSCode extension: https://marketplace.visualstudio.com/items?itemName=Vue.volar  
+Project: https://github.com/johnsoncodehk/volar  
 LSP: https://github.com/johnsoncodehk/volar
 
 <p align="center">
@@ -130,4 +133,4 @@ See [CONTRIBUTING.md](https://github.com/vuejs/vetur/blob/master/.github/CONTRIB
 
 ## License
 
-MIT © [Pine Wu](https://github.com/octref) 
+MIT © [Pine Wu](https://github.com/octref)

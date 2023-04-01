@@ -1,7 +1,7 @@
 {
   "name": "vti-with-exclude",
   "description": "Vetur Terminal Interface",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./dist/cli.js",
   "bin": {
     "vti": "./bin/vti"
