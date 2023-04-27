@@ -611,7 +611,7 @@
     "@vscode/test-electron": "^1.6.2",
     "esbuild": "^0.13.13",
     "fs-extra": "^10.0.0",
-    "glob": "^7.2.0",
+    "glob": "^10.2.2",
     "husky": "^7.0.4",
     "js-yaml": "^4.1.0",
     "lint-staged": "^11.2.6",
